@@ -9,14 +9,9 @@ const [profile,setProfile]= useState(data)
     <main>
       <section className="container">
         <h3>{profileLength} birthday today</h3>
-        {profile.map(({id, name , age,image}) => {
-          return <List 
-            key={id}
-            name={name}
-            age={age}
-            image={image}
-        />
-        })}
+        <button>+</button>
+          <List profile={profile} />
+        
         <button onClick={() =>setProfile([])}>clear all</button>
       </section>
   </main>)

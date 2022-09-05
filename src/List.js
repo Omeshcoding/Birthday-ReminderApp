@@ -1,14 +1,22 @@
 import React from 'react';
 
-const List = (props) => {
+const List = ({profile}) => {
   return (
-    <section className='person'>
-      <img src={props.image} />
-      <div>
-      <h4>{ props.name}</h4>
-      <p>{ props.age} years</p>
-      </div>
-    </section>
+    <> 
+    {
+      profile.map((person) => {
+        const { id, name, age, image }=person
+        return (
+          <article key={id} className="person">
+            <div>
+              <img src={image} />
+              <h4>{name}</h4>
+              <p>{age} years</p>
+            </div>
+          </article>
+        );})}
+  </>
+
   );
 };
 
